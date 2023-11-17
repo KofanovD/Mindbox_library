@@ -29,11 +29,10 @@ INSERT INTO Categories (Name)
 VALUES ('Category 1'), ('Category 2'), ('Category 3');
 
 -- Добавление связей между Productами и Categoryми
--- Пример: Product 1 принадлежит Categoryм 1 и 2, Product 2 - к категории 3 и т.д.
 INSERT INTO ProductCategories (ProductID, CategoryID) 
 VALUES (1, 1), (1, 2), (3, 3), (3, 1), (4, 3), (4, 1), (5, 1), (5, 2), (5, 3);
 
-
+-- Итоговый запрос
 SELECT P.Name AS 'Product', C.Name AS 'Category'
 FROM Products P
 LEFT JOIN ProductCategories PC ON P.ProductID = PC.ProductID
